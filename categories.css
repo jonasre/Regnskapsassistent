@@ -1,0 +1,142 @@
+.root  {
+	
+	-fx-background-color: #333;
+	-fx-border-color: black;
+}
+
+.list-view {
+	-fx-background-color: #202020;
+}
+
+.thumb, .track-background {
+	-fx-background-color: #444;
+}
+
+.track {
+    -fx-background-color: #1a1a1a;
+}
+
+.list-cell {
+	-fx-text-fill: rgb(180, 180, 180);
+}
+
+.list-cell:filled:selected {
+	-fx-background-color: #2f2f2f;
+}
+
+.list-cell:odd {
+	-fx-background-color: #1f1f1f;
+}
+
+.list-cell:even {
+	-fx-background-color: #222;
+}
+
+.button {
+    -fx-background-color: 
+        #000000, /*bottom*/
+        linear-gradient(#111111, #1d1d1d), /*outer border*/
+        linear-gradient(#504c4c, #353535), /*inner border*/
+		linear-gradient(#474040, #333333); /*inside*/
+	-fx-text-fill: #fff;
+}
+
+.button:pressed {
+	-fx-background-color: 
+        #000000, /*bottom*/
+        linear-gradient(#1d1d1d, #111111), /*outer border*/
+        linear-gradient(#353535, #504c4c), /*inner border*/
+		linear-gradient(#333333, #474040); /*inside*/
+		-fx-effect: innershadow(gaussian, rgb(0, 0, 0), 5, 0, 0, 0);
+}
+
+.button:focused {
+	-fx-background-insets: 0, 1, 1;
+    -fx-background-radius: 5, 4, 3;
+}
+
+#catInput {
+    -fx-text-inner-color: rgb(179, 179, 179);
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+	-fx-effect: innershadow(gaussian, rgb(0, 0, 0), 12, 0, 0, 0);
+	-fx-background-color:
+		#000000, /*bottom*/
+		linear-gradient(#111111, #1d1d1d), /*outer border*/
+		linear-gradient(#504c4c, #353535), /*inner border*/
+		#333; /*inside*/;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    cursor: text;
+    -fx-cursor: text;
+    padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+	-fx-padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+}
+#catInput:focused {
+    -fx-highlight-fill: -fx-accent;
+	-fx-highlight-text-fill: white;
+	-fx-effect: innershadow(gaussian, rgb(0, 0, 0), 12, 0, 0, 0);
+    -fx-background-color:
+		#000000, /*bottom*/
+		linear-gradient(#111111, #1d1d1d), /*outer border*/
+		linear-gradient(#504c4c, #353535), /*inner border*/
+		rgb(66, 66, 66); /*inside*/;
+    /* -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 3, 2, 4, 0; */
+	-fx-prompt-text-fill: transparent;
+	-fx-background-insets: 0, 1, 1;
+    -fx-background-radius: 5, 4, 3;
+}
+
+.text-input {
+    -fx-text-inner-color: rgb(179, 179, 179);
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+	-fx-effect: innershadow(gaussian, rgb(0, 0, 0), 12, 0, 0, 0);
+	-fx-background-color:
+		#000000, /*bottom*/
+		linear-gradient(#111111, #1d1d1d), /*outer border*/
+		linear-gradient(#504c4c, #353535), /*inner border*/
+		#333; /*inside*/;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    cursor: text;
+    -fx-cursor: text;
+    padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+	-fx-padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+}
+
+.text-input:focused {
+    -fx-highlight-fill: -fx-accent;
+	-fx-highlight-text-fill: white;
+	-fx-effect: innershadow(gaussian, rgb(0, 0, 0), 12, 0, 0, 0);
+    -fx-background-color:
+		#000000, /*bottom*/
+		linear-gradient(#111111, #1d1d1d), /*outer border*/
+		linear-gradient(#504c4c, #353535), /*inner border*/
+		rgb(66, 66, 66); /*inside*/;
+    /* -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 3, 2, 4, 0; */
+	-fx-prompt-text-fill: transparent;
+	-fx-background-insets: 0, 1, 1;
+    -fx-background-radius: 5, 4, 3;
+}
+
+.separator *.line {
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+	-fx-border-color: #252525;
+}
+
+.alert .button {
+	-fx-background-color: 
+		#000000, /*bottom*/
+		linear-gradient(#111111, #1d1d1d), /*outer border*/
+		linear-gradient(#504c4c, #353535), /*inner border*/
+		linear-gradient(#474040, #333333); /*inside*/
+	-fx-text-fill: #fff;
+}

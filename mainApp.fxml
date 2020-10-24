@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="919.0" prefWidth="1304.0" stylesheets="@mainApp.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1304.0" style="-fx-background-color: #444;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openTransactionLog" text="Åpne transaksjonslogg" />
+                  <MenuItem mnemonicParsing="false" onAction="#openWork" text="Åpne arbeid" />
+                  <MenuItem fx:id="menuSave" disable="true" mnemonicParsing="false" onAction="#saveWork" text="Lagre" />
+                  <MenuItem fx:id="menuSaveAs" disable="true" mnemonicParsing="false" onAction="#saveWorkAs" text="Lagre som" />
+                  <MenuItem fx:id="menuExport" disable="true" mnemonicParsing="false" onAction="#export" text="Eksporter" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Avslutt" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.5207166853303471" layoutX="217.0" layoutY="24.0" orientation="VERTICAL" prefHeight="466.0" prefWidth="676.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1302.0">
+               <children>
+                  <TableView fx:id="table" onMouseClicked="#loadTransaction" prefHeight="155.0" prefWidth="674.0" style="-fx-background-color: #222; -fx-selection-bar-non-focused: #0f0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableDate" editable="false" maxWidth="151.0" minWidth="-Infinity" prefWidth="104.0" text="Dato" />
+                      <TableColumn fx:id="tableExplaination" editable="false" maxWidth="1500.0" prefWidth="565.0" text="Forklaring" />
+                        <TableColumn fx:id="tableAmount" editable="false" maxWidth="300.0" prefWidth="189.0" text="Beløp (Refunderes)" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1302.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="502.0" prefWidth="1131.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="956.0" style="-fx-background-color: #222;">
+                           <children>
+                              <Label layoutX="11.0" layoutY="-4.0" text="Dato" underline="true">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dateText" layoutX="14.0" layoutY="31.0" text="DD/MM-YYYY">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="57.0" text="Forklaring" underline="true">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="explainationText" alignment="TOP_LEFT" layoutX="15.0" layoutY="90.0" prefHeight="54.0" prefWidth="626.0" text="Kontoregulering  239 Studielån (gjenstår Fremdeles 6006, 25 Kr " wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="137.0" text="Beløp" underline="true">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="amountText" layoutX="15.0" layoutY="173.0" text="1234.00,-">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="195.0" text="Beløp som refunderes" underline="true">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="fundedInput" layoutX="14.0" layoutY="236.0" prefHeight="25.0" prefWidth="73.0" />
+                              <Label layoutX="11.0" layoutY="263.0" text="Kategori" underline="true">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="categoryDropdown" layoutX="12.0" layoutY="304.0" prefWidth="150.0" />
+                              <Button fx:id="addCategoryButton" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="168.0" layoutY="304.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#openCategoriesWindow" prefHeight="25.0" prefWidth="25.0" styleClass="choice-box" textAlignment="CENTER" textFill="#e4e4e4" textOverrun="CLIP">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="9.0" layoutY="328.0" text="Kommentar" underline="true" AnchorPane.leftAnchor="9.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="commentInput" layoutX="12.0" layoutY="368.0" maxHeight="60.0" minHeight="48.0" prefHeight="50.0" prefWidth="481.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <BorderPane prefHeight="500.0" prefWidth="359.0" style="-fx-background-color: #222;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <Label text="Kontrollpanel" textFill="#ff5600" underline="true" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="39.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="274.0" minHeight="10.0" percentHeight="100.0" prefHeight="274.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <VBox prefHeight="500.0" prefWidth="300.0">
+                                             <children>
+                                                <Button fx:id="fundedButton" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#fundTransaction" prefHeight="500.0" prefWidth="300.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="TOP_RIGHT" prefHeight="500.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Button fx:id="prevButton" mnemonicParsing="false" onAction="#previousTransaction" prefHeight="500.0" prefWidth="1200.0" />
+                                                <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextTransaction" prefHeight="500.0" prefWidth="1200.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
