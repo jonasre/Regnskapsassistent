@@ -37,7 +37,7 @@ abstract class FileReader {
         } else {
           amountSTR = bits[3];
         }
-        amountSTR = amountSTR.replace(".", "");
+        //amountSTR = amountSTR.replace(".", "");
         amountSTR = amountSTR.replace(",", ".");
         double amount = Double.parseDouble(amountSTR);
         transactionlist.add(new Transaction(date, bits[1], amount, outbound));
