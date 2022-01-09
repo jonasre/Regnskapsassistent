@@ -1,3 +1,5 @@
+package com.jonasre.regnskapsassistent;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,7 +30,7 @@ public class Regnskapsassistent extends Application {
 
   @Override
   public void start(Stage stage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("mainApp.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("/views/mainApp.fxml"));
     scene = new Scene(root);
     stage.setScene(scene);
     stage.setTitle("Regnskapsassistent");

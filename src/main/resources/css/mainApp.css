@@ -141,11 +141,11 @@
 }
 
 #fundedButton {
-    -fx-graphic: url('img/fund_icon.png');
+    -fx-graphic: url('../images/fund_icon.png');
 }
 
 #prevButton, #nextButton {
-    -fx-graphic: url('img/arrow_icon.png');
+    -fx-graphic: url('../images/arrow_icon.png');
     -fx-background-color: 
         #000000,
         linear-gradient(#2c68c7, #2f548f),
@@ -157,7 +157,7 @@
 }
 
 #prevButton:pressed, #nextButton:pressed {
-    -fx-graphic: url('img/arrow_icon.png');
+    -fx-graphic: url('../images/arrow_icon.png');
     -fx-background-color: 
         #000000,
         linear-gradient(#2f548f, #2566cf),
@@ -173,7 +173,7 @@
 }
 
 #addCategoryButton {
-    -fx-graphic: url('img/plus.png');
+    -fx-graphic: url('../images/plus.png');
 }
 
 .fundedButtonTrue {

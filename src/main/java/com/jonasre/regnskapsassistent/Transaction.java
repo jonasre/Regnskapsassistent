@@ -1,3 +1,5 @@
+package com.jonasre.regnskapsassistent;
+
 import java.time.LocalDate;
 import java.text.DecimalFormat;
 

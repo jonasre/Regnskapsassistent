@@ -1,3 +1,5 @@
+package com.jonasre.regnskapsassistent;
+
 import java.util.ArrayList;
 
 class Category {

@@ -1,3 +1,5 @@
+package com.jonasre.regnskapsassistent;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -244,7 +246,7 @@ public class Controller {
     @FXML
     void openCategoriesWindow(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Controller.class.getResource("categories.fxml"));
+        Parent root = FXMLLoader.load(Controller.class.getResource("/views/categories.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("Behandle kategorier");
         stage.setResizable(false);

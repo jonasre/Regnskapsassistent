@@ -1,3 +1,5 @@
+package com.jonasre.regnskapsassistent;
+
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
