@@ -1,8 +1,8 @@
-package com.jonasre.regnskapsassistent;
+package com.jonasre.regnskapsassistent.model;
 
 import java.util.ArrayList;
 
-class Category {
+public class Category {
 	private String name;
 	private ArrayList<Transaction> transactions;
 

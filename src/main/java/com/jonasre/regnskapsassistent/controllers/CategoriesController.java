@@ -1,8 +1,12 @@
-package com.jonasre.regnskapsassistent;
+package com.jonasre.regnskapsassistent.controllers;
 
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
+import com.jonasre.regnskapsassistent.Regnskapsassistent;
+import com.jonasre.regnskapsassistent.model.Category;
+import com.jonasre.regnskapsassistent.model.Transaction;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

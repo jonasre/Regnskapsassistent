@@ -13,6 +13,10 @@ import javafx.stage.FileChooser.ExtensionFilter;
 */
 import java.io.File;
 
+import com.jonasre.regnskapsassistent.model.Category;
+import com.jonasre.regnskapsassistent.model.Transaction;
+import com.jonasre.regnskapsassistent.util.FileReader;
+
 public class Regnskapsassistent extends Application {
   public static ObservableList<Transaction> transactions;
   public static ObservableList<Category> categories;

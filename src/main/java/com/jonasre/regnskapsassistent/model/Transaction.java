@@ -1,4 +1,4 @@
-package com.jonasre.regnskapsassistent;
+package com.jonasre.regnskapsassistent.model;
 
 import java.time.LocalDate;
 import java.text.DecimalFormat;
