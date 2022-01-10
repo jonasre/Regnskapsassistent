@@ -249,6 +249,10 @@
     -fx-text-fill: #000;
 }
 
+.table-row-cell {
+    -fx-background-color: #222;
+}
+
 .rowInbound:even {
     -fx-background-color: #003;
 }
