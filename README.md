@@ -1,5 +1,6 @@
 # Regnskapsassistent
 Regnskapsassistent er en JavaFX applikasjon ment for å hjelpe med utgifter som dekkes av andre.
+
 ![Bilde av programmet i bruk](https://i.imgur.com/KT6AeC3.png)
 
 ## Funksjonalitet
