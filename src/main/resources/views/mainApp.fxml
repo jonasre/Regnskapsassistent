@@ -23,7 +23,7 @@
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" style="-fx-background-color: #444;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Fil">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#openTransactionLog" text="Åpne transaksjonslogg" />
                   <MenuItem mnemonicParsing="false" onAction="#openWork" text="Åpne arbeid" />
@@ -33,14 +33,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#exit" text="Avslutt" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Hjelp">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#aboutAlert" text="Om" />
             </items>
           </Menu>
         </menus>
