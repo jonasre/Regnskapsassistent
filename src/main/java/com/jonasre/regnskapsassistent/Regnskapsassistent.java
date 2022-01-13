@@ -25,9 +25,7 @@ public class Regnskapsassistent extends Application {
 
   public static void main(String[] args) {
     workFile = null;
-
     categories = FXCollections.observableArrayList();
-    categories.addAll(new Category("Mat og drikke"), new Category("Trening")); //temp
 
     launch();
   }
