@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="1100.0" prefHeight="919.0" prefWidth="1304.0" stylesheets="@../css/mainApp.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jonasre.regnskapsassistent.controllers.MainAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="1100.0" prefHeight="919.0" prefWidth="1304.0" stylesheets="@../css/mainApp.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jonasre.regnskapsassistent.controllers.MainAppController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" style="-fx-background-color: #444;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -92,7 +92,7 @@
                                     <Font size="25.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="amountText" layoutX="15.0" layoutY="173.0" prefHeight="27.0" prefWidth="63.0" text="0" textAlignment="RIGHT">
+                              <Label fx:id="amountText" layoutX="15.0" layoutY="173.0" text="0" textAlignment="RIGHT">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
