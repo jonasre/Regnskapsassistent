@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -34,6 +35,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class MainAppController {
     // MenuItems from top MenuBar
@@ -177,17 +179,14 @@ public class MainAppController {
         categoryDropdown.setValue(selectedTransaction.getCategory());
         commentInput.setText(selectedTransaction.getComment());
 
-        if (!selectedTransaction.isOutbound()) {
-            fundedInput.setDisable(true);
-            categoryDropdown.setDisable(true);
-            fundedButton.setDisable(true);
-        } else {
-            fundedInput.setDisable(false);
-            categoryDropdown.setDisable(false);
-            commentInput.setDisable(false);
-            fundedButton.setDisable(false);
-        }
-        
+        // Enable/disable input fields and buttons depending on whether the 
+        // transaction is outbound or not
+        boolean inbound = !selectedTransaction.isOutbound();
+        fundedInput.setDisable(inbound);
+        fundedButton.setDisable(inbound);
+        commentInput.setDisable(false);
+        // Only enabled if transaction is outbound and categories are available
+        categoryDropdown.setDisable(inbound || Regnskapsassistent.categories.isEmpty());
     }
 
     // Called when pressing fundedButton.
@@ -274,6 +273,14 @@ public class MainAppController {
         stage.initOwner(
             ((Node)event.getSource()).getScene().getWindow() );
         stage.show();
+        
+        // Used to enable/disable categoriesdropdown
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent e) {
+                loadTransaction(null);
+            }
+        });
     }
 
     // Selects and opens a transactionlog .txt-file
