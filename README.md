@@ -35,7 +35,7 @@ Programmet krever Maven og Java 17. Last ned koden og start en terminal i mappen
 `mvn clean javafx:run`
 
 ## Hvordan bruke
-Når du har åpnet programmet, gå øverst i venstre hjørne og trykk *File -> Åpne transaksjonslogg*. Finn så filen du vil laste opp.
+Når du har åpnet programmet, gå øverst i venstre hjørne og trykk *Fil -> Åpne transaksjonslogg*. Finn så filen du vil laste opp.
 
 ### Filformat
 Filen må være på følgende format: `"Dato";"Forklaring";"Rentedato";"Ut fra konto";"Inn på konto"`.
@@ -54,13 +54,13 @@ For å legge transaksjonen i en kategori må du først opprette en. Trykk på pl
 For å legge til en kommentar kan du skrive i tekstfeltet under "Kommentar".
 
 ### Lagring
-For å lagre det du har gjort så langt kan du trykke på *File -> Lagre* eller *File -> Lagre som*. For å åpne et lagret arbeid kan du trykke på *File -> Åpne arbeid*.
+For å lagre det du har gjort så langt kan du trykke på *Fil -> Lagre* eller *Fil -> Lagre som*. For å åpne et lagret arbeid kan du trykke på *Fil -> Åpne arbeid*.
 
 ### Eksportering
-Når du er ferdig med arbeidet kan du trykke på *File -> Eksporter* for å lage et tekstdokument som oppsummerer alt som skal dekkes.
+Når du er ferdig med arbeidet kan du trykke på *Fil -> Eksporter* for å lage et tekstdokument som oppsummerer alt som skal dekkes.
 
 ### Avslutte
-For å lukke programmet kan du trykke på krysset øverst i høyre hjørne eller på *File -> Avslutt*. Pass på at du har lagret alt du ikke vil miste før du gjør dette.
+For å lukke programmet kan du trykke på krysset øverst i høyre hjørne eller på *Fil -> Avslutt*. Pass på at du har lagret alt du ikke vil miste før du gjør dette.
 
 ## Credits
 Transaksjon ikon laget av//
