@@ -26,7 +26,7 @@ public abstract class FileReader {
   public static ObservableList<Transaction> read(File file) {
     ObservableList<Transaction> transactionlist = FXCollections.observableArrayList();
     try {
-      Scanner reader = new Scanner(file);
+      Scanner reader = new Scanner(file, "UTF-8");
       reader.nextLine(); // Ignores first line of the file
 
       // Reads file
