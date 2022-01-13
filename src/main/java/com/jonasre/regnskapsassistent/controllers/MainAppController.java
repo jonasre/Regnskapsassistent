@@ -349,7 +349,7 @@ public class MainAppController {
             return;
         }
 
-        FileReader.loadWork(file);
+        Regnskapsassistent.loadWork(file);
         table.setItems(Regnskapsassistent.transactions);
         categoryDropdown.setItems(Regnskapsassistent.categories);
         selection.selectFirst();

@@ -26,7 +26,7 @@ public class Regnskapsassistent extends Application {
   public static void main(String[] args) {
     workFile = null;
     categories = FXCollections.observableArrayList();
-
+    
     launch();
   }
 
@@ -43,7 +43,18 @@ public class Regnskapsassistent extends Application {
   }
 
   public static void loadTransactionList(File file) {
+    reset();
     transactions = FileReader.read(file);
+  }
+
+  public static void loadWork(File file) {
+    reset();
+    FileReader.loadWork(file);
+  }
+
+  private static void reset() {
+    workFile = null;
+    categories.clear();
   }
 
 
