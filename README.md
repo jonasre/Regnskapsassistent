@@ -64,6 +64,9 @@ For å lukke programmet kan du trykke på krysset øverst i høyre hjørne eller
 
 ## Credits
 Transaksjon ikon laget av//
+
 Transaction icon made by
+
 https://pixsector.com/user/adminUser
+
 https://pixsector.com/icon/free-currency-icon-png-vector/899
