@@ -1,15 +1,15 @@
 package com.jonasre.regnskapsassistent.controllers;
 
+import com.jonasre.regnskapsassistent.Regnskapsassistent;
+import com.jonasre.regnskapsassistent.model.Category;
+import com.jonasre.regnskapsassistent.model.Transaction;
+import com.jonasre.regnskapsassistent.util.FileReader;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-
-import com.jonasre.regnskapsassistent.Regnskapsassistent;
-import com.jonasre.regnskapsassistent.model.Category;
-import com.jonasre.regnskapsassistent.model.Transaction;
-import com.jonasre.regnskapsassistent.util.FileReader;
 
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -30,11 +30,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.FileChooser.ExtensionFilter;
 
 public class MainAppController {
     // MenuItems from top MenuBar
@@ -50,14 +49,19 @@ public class MainAppController {
     public TableColumn<Transaction, String> tableExplaination;
     public TableColumn<Transaction, String> tableAmount;
 
+    // Input area
     public Label dateText;
     public Label explainationText;
     public Label amountText;
     public TextField fundedInput;
     public TextArea commentInput;
-    public Button fundedButton;
     public Button addCategoryButton;
     public ChoiceBox<Category> categoryDropdown;
+
+    // Control panel
+    public Button fundedButton;
+    public Button prevButton;
+    public Button nextButton;
 
     public Transaction selectedTransaction;
 
@@ -172,6 +176,18 @@ public class MainAppController {
         fundedInput.setText(selectedTransaction.getFundedAmount() + "");
         categoryDropdown.setValue(selectedTransaction.getCategory());
         commentInput.setText(selectedTransaction.getComment());
+
+        if (!selectedTransaction.isOutbound()) {
+            fundedInput.setDisable(true);
+            categoryDropdown.setDisable(true);
+            fundedButton.setDisable(true);
+        } else {
+            fundedInput.setDisable(false);
+            categoryDropdown.setDisable(false);
+            commentInput.setDisable(false);
+            fundedButton.setDisable(false);
+        }
+        
     }
 
     // Called when pressing fundedButton.
@@ -202,7 +218,6 @@ public class MainAppController {
         // In this way you're sure you have no styles applied to your object button
         // then you specify the class you would give to the button
         if (!selectedTransaction.isOutbound()) {
-            System.out.println("Error: Transaction is not outbound");
             return;
         } else if (!selectedTransaction.isFunded() || selectedTransaction.getFundedAmount() == 0) {
             fundedButton.getStyleClass().add("fundedButtonFalse");
@@ -284,10 +299,13 @@ public class MainAppController {
         loadTransaction(null);
         Regnskapsassistent.workFile = null;
 
-        // Enables menuitems for save and export
+        // Enables buttons
         menuSave.setDisable(false);
         menuSaveAs.setDisable(false);
         menuExport.setDisable(false);
+        addCategoryButton.setDisable(false);
+        prevButton.setDisable(false);
+        nextButton.setDisable(false);
     }
 
     // Exports work to file

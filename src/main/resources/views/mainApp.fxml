@@ -19,9 +19,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="919.0" prefWidth="1304.0" stylesheets="@../css/mainApp.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jonasre.regnskapsassistent.controllers.MainAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="1100.0" prefHeight="919.0" prefWidth="1304.0" stylesheets="@../css/mainApp.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jonasre.regnskapsassistent.controllers.MainAppController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1304.0" style="-fx-background-color: #444;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar layoutY="2.0" prefHeight="25.0" style="-fx-background-color: #444;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -45,15 +45,15 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.5207166853303471" layoutX="217.0" layoutY="24.0" orientation="VERTICAL" prefHeight="466.0" prefWidth="676.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <SplitPane dividerPositions="0.5207166853303471" layoutX="217.0" layoutY="24.0" orientation="VERTICAL" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1302.0">
+          <AnchorPane>
                <children>
-                  <TableView fx:id="table" onMouseClicked="#loadTransaction" prefHeight="155.0" prefWidth="674.0" style="-fx-background-color: #222; -fx-selection-bar-non-focused: #0f0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="table" onMouseClicked="#loadTransaction" style="-fx-background-color: #222; -fx-selection-bar-non-focused: #0f0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="tableDate" editable="false" maxWidth="151.0" minWidth="-Infinity" prefWidth="104.0" text="Dato" />
-                      <TableColumn fx:id="tableExplaination" editable="false" maxWidth="1500.0" prefWidth="565.0" text="Forklaring" />
-                        <TableColumn fx:id="tableAmount" editable="false" maxWidth="300.0" prefWidth="189.0" text="Beløp (Refunderes)" />
+                      <TableColumn fx:id="tableDate" editable="false" maxWidth="600.0" minWidth="-Infinity" prefWidth="104.0" text="Dato" />
+                      <TableColumn fx:id="tableExplaination" editable="false" maxWidth="3000.0" prefWidth="565.0" text="Forklaring" />
+                        <TableColumn fx:id="tableAmount" editable="false" maxWidth="800.0" minWidth="-Infinity" prefWidth="189.0" text="Beløp (Refunderes)" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -61,11 +61,11 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1302.0">
+          <AnchorPane minHeight="430.0" minWidth="0.0" prefHeight="100.0" prefWidth="1302.0">
                <children>
                   <SplitPane dividerPositions="0.5" prefHeight="502.0" prefWidth="1131.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="956.0" style="-fx-background-color: #222;">
+                      <AnchorPane minHeight="0.0" minWidth="550.0" prefWidth="956.0" style="-fx-background-color: #222;" SplitPane.resizableWithParent="false">
                            <children>
                               <Label layoutX="11.0" layoutY="-4.0" text="Dato" underline="true">
                                  <font>
@@ -82,7 +82,7 @@
                                     <Font size="25.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="explainationText" alignment="TOP_LEFT" layoutX="15.0" layoutY="90.0" prefHeight="54.0" prefWidth="626.0" text="Kontoregulering  239 Studielån (gjenstår Fremdeles 6006, 25 Kr " wrapText="true">
+                              <Label fx:id="explainationText" alignment="TOP_LEFT" layoutX="15.0" layoutY="90.0" prefHeight="54.0" prefWidth="626.0" text="Ingen transaskjon lastet inn" wrapText="true">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -92,7 +92,7 @@
                                     <Font size="25.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="amountText" layoutX="15.0" layoutY="173.0" text="1234.00,-">
+                              <Label fx:id="amountText" layoutX="15.0" layoutY="173.0" prefHeight="27.0" prefWidth="63.0" text="0" textAlignment="RIGHT">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -102,14 +102,14 @@
                                     <Font size="25.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="fundedInput" layoutX="14.0" layoutY="236.0" prefHeight="25.0" prefWidth="73.0" />
+                              <TextField fx:id="fundedInput" disable="true" layoutX="14.0" layoutY="236.0" prefHeight="25.0" prefWidth="73.0" />
                               <Label layoutX="11.0" layoutY="263.0" text="Kategori" underline="true">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
                               </Label>
-                              <ChoiceBox fx:id="categoryDropdown" layoutX="12.0" layoutY="304.0" prefWidth="150.0" />
-                              <Button fx:id="addCategoryButton" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="168.0" layoutY="304.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#openCategoriesWindow" prefHeight="25.0" prefWidth="25.0" styleClass="choice-box" textAlignment="CENTER" textFill="#e4e4e4" textOverrun="CLIP">
+                              <ChoiceBox fx:id="categoryDropdown" disable="true" layoutX="12.0" layoutY="304.0" prefWidth="150.0" />
+                              <Button fx:id="addCategoryButton" alignment="CENTER" contentDisplay="CENTER" disable="true" ellipsisString="" layoutX="168.0" layoutY="304.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#openCategoriesWindow" prefHeight="25.0" prefWidth="25.0" styleClass="choice-box" textAlignment="CENTER" textFill="#e4e4e4" textOverrun="CLIP">
                                  <font>
                                     <Font size="28.0" />
                                  </font>
@@ -119,19 +119,12 @@
                                     <Font size="25.0" />
                                  </font>
                               </Label>
-                              <TextArea fx:id="commentInput" layoutX="12.0" layoutY="368.0" maxHeight="60.0" minHeight="48.0" prefHeight="50.0" prefWidth="481.0" />
+                              <TextArea fx:id="commentInput" disable="true" layoutX="12.0" layoutY="368.0" maxHeight="60.0" minHeight="48.0" prefHeight="50.0" prefWidth="481.0" />
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <AnchorPane minHeight="0.0" minWidth="550.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
                               <BorderPane prefHeight="500.0" prefWidth="359.0" style="-fx-background-color: #222;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <top>
-                                    <Label text="Kontrollpanel" textFill="#ff5600" underline="true" BorderPane.alignment="CENTER">
-                                       <font>
-                                          <Font size="39.0" />
-                                       </font>
-                                    </Label>
-                                 </top>
                                  <center>
                                     <GridPane BorderPane.alignment="CENTER">
                                       <columnConstraints>
@@ -144,13 +137,13 @@
                                        <children>
                                           <VBox prefHeight="500.0" prefWidth="300.0">
                                              <children>
-                                                <Button fx:id="fundedButton" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#fundTransaction" prefHeight="500.0" prefWidth="300.0" />
+                                                <Button fx:id="fundedButton" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#fundTransaction" prefHeight="2000.0" prefWidth="300.0" />
                                              </children>
                                           </VBox>
                                           <VBox alignment="TOP_RIGHT" prefHeight="500.0" prefWidth="100.0" GridPane.columnIndex="1">
                                              <children>
-                                                <Button fx:id="prevButton" mnemonicParsing="false" onAction="#previousTransaction" prefHeight="500.0" prefWidth="1200.0" />
-                                                <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextTransaction" prefHeight="500.0" prefWidth="1200.0" />
+                                                <Button fx:id="prevButton" disable="true" mnemonicParsing="false" onAction="#previousTransaction" prefHeight="1000.0" prefWidth="1200.0" />
+                                                <Button fx:id="nextButton" disable="true" mnemonicParsing="false" onAction="#nextTransaction" prefHeight="1000.0" prefWidth="1200.0" />
                                              </children>
                                           </VBox>
                                        </children>

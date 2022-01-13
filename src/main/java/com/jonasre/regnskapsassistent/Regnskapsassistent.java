@@ -38,6 +38,8 @@ public class Regnskapsassistent extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.setTitle("Regnskapsassistent");
+    stage.setMinWidth(1120);
+    stage.setMinHeight(700);
     stage.show();
 
   }
