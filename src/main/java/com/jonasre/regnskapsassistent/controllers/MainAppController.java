@@ -3,7 +3,7 @@ package com.jonasre.regnskapsassistent.controllers;
 import com.jonasre.regnskapsassistent.Regnskapsassistent;
 import com.jonasre.regnskapsassistent.model.Category;
 import com.jonasre.regnskapsassistent.model.Transaction;
-import com.jonasre.regnskapsassistent.util.FileReader;
+import com.jonasre.regnskapsassistent.util.FileManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -29,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
@@ -333,7 +335,7 @@ public class MainAppController {
             return;
         }
 
-        FileReader.exportWork(file);
+        FileManager.exportWork(file);
     }
 
     // Lets user select .ras-file, then loads it
@@ -375,7 +377,7 @@ public class MainAppController {
     void saveWork() {
         System.out.println("Save work");
         if (Regnskapsassistent.workFile != null) {
-            FileReader.saveWork(Regnskapsassistent.workFile);
+            FileManager.saveWork(Regnskapsassistent.workFile);
         } else {
             saveWorkAs();
         }
@@ -401,7 +403,18 @@ public class MainAppController {
             return;
         }
 
-        FileReader.saveWork(file);
+        FileManager.saveWork(file);
         Regnskapsassistent.workFile = file;
+    }
+
+    @FXML
+    void aboutAlert() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Om");
+        alert.setHeaderText("Regnskapsassistent v"+Regnskapsassistent.version);
+        alert.setContentText("Laget av Jonas Reinholdt\n"
+            +"https://github.com/jonasre/Regnskapsassistent");
+
+        alert.showAndWait();
     }
 }

@@ -1,27 +1,25 @@
 package com.jonasre.regnskapsassistent.util;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
-
 import com.jonasre.regnskapsassistent.Regnskapsassistent;
 import com.jonasre.regnskapsassistent.model.Category;
 import com.jonasre.regnskapsassistent.model.Transaction;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-//import java.io.IOExeption;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
-public abstract class FileReader {
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public abstract class FileManager {
   // Opens transaction log
   public static ObservableList<Transaction> read(File file) {
     ObservableList<Transaction> transactionlist = FXCollections.observableArrayList();
